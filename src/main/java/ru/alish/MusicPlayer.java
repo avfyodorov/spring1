@@ -1,12 +1,19 @@
 package ru.alish;
 
-public class MusicPlayer {
-   private Music music;
+import java.util.List;
 
-   public MusicPlayer(Music music) {
-      this.music = music;
+public class MusicPlayer {
+   public void setMusicList(List<Music> musicList) {
+      this.musicList = musicList;
    }
-   public void play(){
-      System.out.println(music.getSong());
+
+   private List<Music> musicList;
+
+   public MusicPlayer() {
+   }
+
+   public void play() {
+      for (Music music : musicList)
+         System.out.println(music.getSong());
    }
 }

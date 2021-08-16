@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="testBean"
-          class="ru.alish.TestBean">
-        <constructor-arg value="Gopa"/>
+    <bean id="initd" class="ru.alish.InitDestroy"
+    init-method="init" destroy-method="destroy1"
+    scope="prototype">
+        <constructor-arg name="name" value="qyqu"/>
     </bean>
 
-    <bean id="musicBean"
+
+    <bean id="testBean"
+          class="ru.alish.TestBean" scope="prototype">
+        <constructor-arg value="opa-pa"/>
+        <property name="vol" value="93"/>
+    </bean>
+
+    <bean id="musicBean1"
           class="ru.alish.RockMusic">
     </bean>
+    <bean id="musicBean2"
+          class="ru.alish.ClassicalMusic">
+    </bean>
 
-    <bean id="playner" class="ru.alish.MusicPlayer" >
-    <constructor-arg ref="musicBean"/>
+    <bean id="playner" class="ru.alish.MusicPlayer">
+        <property name="musicList">
+            <list>
+                <ref bean="musicBean1"/>
+                <ref bean="musicBean2"/>
+            </list>
+        </property>
     </bean>
 </beans>
