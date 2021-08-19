@@ -44,7 +44,7 @@ public class AnnoTest {
       List<BeanPrototype>bpList=new ArrayList<>();
       BeanPrototype bp=con.getBean(BeanPrototype.class);   bp.setS("11111111111"); bpList.add(bp);
       bp=con.getBean(BeanPrototype.class);      bp.setS("2222222");bpList.add(bp);
-      bp=con.getBean(BeanPrototype.class);      bp.setS("3333333333333");bpList.add(bp);
+      bp=con.getBean(BeanPrototype.class);      bp.setS("3377777733333333333");bpList.add(bp);
       for (BeanPrototype b :bpList)
       System.out.println(b.getS());
       //хватит уже
