@@ -7,6 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+  <context:component-scan base-package="ru.alish"/>
+  <!--
     <bean id="initd" class="ru.alish.InitDestroy"
     init-method="init" destroy-method="destroy1"
     scope="prototype">
@@ -34,5 +36,5 @@
                 <ref bean="musicBean2"/>
             </list>
         </property>
-    </bean>
+    </bean>-->
 </beans>

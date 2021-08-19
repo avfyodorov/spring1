@@ -8,8 +8,8 @@ public class TestSpring {
       ClassPathXmlApplicationContext con =
               new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
-      InitDestroy id = con.getBean(InitDestroy.class, "initd");
-      InitDestroy id2 = con.getBean(InitDestroy.class, "initd");
+      InitDestroy id = con.getBean(InitDestroy.class, "initdest");
+      InitDestroy id2 = con.getBean(InitDestroy.class, "initdest");
       id.setName("abra");
       String s = id.getName();
       System.out.println(id.getName());
