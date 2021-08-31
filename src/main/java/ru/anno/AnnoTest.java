@@ -49,5 +49,7 @@ public class AnnoTest {
       System.out.println(b.getS());
       //хватит уже
       con.close();
+
+      System.out.println("289468 + 56624 + 88464 = " + (289468 + 56624 + 88464));
    }
 }
